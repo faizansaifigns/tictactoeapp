@@ -1,0 +1,113 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: white;
+}
+
+/* Title Glow */
+h1 {
+  margin-top: 20px;
+  font-size: 40px;
+  text-shadow: 0 0 10px #00adb5, 0 0 20px #00adb5;
+}
+
+/* Scoreboard */
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+/* Glass Game Board */
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  gap: 15px;
+  justify-content: center;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Cells */
+.cell {
+  width: 110px;
+  height: 110px;
+ background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  font-size: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.cell:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #00adb5;
+}
+
+/* Status */
+#status {
+  margin-top: 25px;
+  font-size: 22px;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000; /* 🔥 ADD THIS */
+}
+.popup-content {
+ background: rgba(30, 30, 50, 0.95); /* darker solid */
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px #00adb5;
+  z-index: 1001;
+}
+
+.popup button {
+  margin-top: 15px;
+  padding: 12px 25px;
+  border: none;
+  background: #00adb5;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.popup button:hover {
+  background: #008c94;
+  transform: scale(1.05);
+}
+
+/* Winning animation */
+.win {
+  background: #00adb5 !important;
+  animation: glow 0.6s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px #00adb5; }
+  to { box-shadow: 0 0 25px #00adb5; }
+}
